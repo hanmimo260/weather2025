@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>경상남도 지역 기상정보 서비스</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-cloud-sun"></i> 경상남도 지역 기상정보 서비스</h1>
+            <p>실시간 날씨 정보를 확인하세요</p>
+        </header>
+
+        <div class="city-selector">
+            <label for="citySelect">도시 선택:</label>
+            <select id="citySelect">
+                <option value="">도시를 선택하세요</option>
+                <option value="창원시">창원시</option>
+                <option value="부산시">부산시</option>
+                <option value="진주시">진주시</option>
+                <option value="통영시">통영시</option>
+                <option value="사천시">사천시</option>
+                <option value="김해시">김해시</option>
+                <option value="밀양시">밀양시</option>
+                <option value="거제시">거제시</option>
+                <option value="양산시">양산시</option>
+                <option value="의령군">의령군</option>
+                <option value="함안군">함안군</option>
+                <option value="창녕군">창녕군</option>
+                <option value="고성군">고성군</option>
+                <option value="남해군">남해군</option>
+                <option value="하동군">하동군</option>
+                <option value="산청군">산청군</option>
+                <option value="함양군">함양군</option>
+                <option value="거창군">거창군</option>
+                <option value="합천군">합천군</option>
+            </select>
+        </div>
+
+        <div class="weather-container" id="weatherContainer">
+            <div class="weather-card">
+                <div class="weather-header">
+                    <div class="location-info">
+                        <h2 id="locationName">도시를 선택하세요</h2>
+                        <p id="currentTime">--:--</p>
+                    </div>
+                    <div class="weather-icon" id="weatherIcon">
+                        <i class="fas fa-question"></i>
+                    </div>
+                </div>
+                
+                <div class="weather-main">
+                    <div class="temperature">
+                        <span id="temperature">--</span>°C
+                    </div>
+                    <div class="weather-description" id="weatherDescription">
+                        날씨 정보를 불러오는 중...
+                    </div>
+                </div>
+
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <i class="fas fa-tint"></i>
+                        <div class="detail-info">
+                            <span class="detail-label">습도</span>
+                            <span class="detail-value" id="humidity">--%</span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-wind"></i>
+                        <div class="detail-info">
+                            <span class="detail-label">풍속</span>
+                            <span class="detail-value" id="windSpeed">-- m/s</span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-compass"></i>
+                        <div class="detail-info">
+                            <span class="detail-label">풍향</span>
+                            <span class="detail-value" id="windDirection">--</span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-eye"></i>
+                        <div class="detail-info">
+                            <span class="detail-label">가시거리</span>
+                            <span class="detail-value" id="visibility">-- km</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>날씨 정보를 불러오는 중...</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>기상청 공공데이터 포털 API 기반</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
